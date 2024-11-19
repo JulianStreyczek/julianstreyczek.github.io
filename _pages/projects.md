@@ -1,11 +1,11 @@
 ---
 layout: page
-title: projects
+title: Other projects
 permalink: /projects/
-description: A growing collection of your cool projects.
+description: 
 nav: true
-nav_order: 2
-display_categories: [work, fun]
+nav_order: 3
+display_categories:
 horizontal: false
 ---
 
@@ -50,7 +50,9 @@ horizontal: false
   {%- else -%}
   <div class="grid">
     {%- for project in sorted_projects -%}
-      {% include projects.html %}
+	  {% if project.importance == 1 %}
+        {% include projects.html %}
+	  {% endif %}
     {%- endfor %}
   </div>
   {%- endif -%}
