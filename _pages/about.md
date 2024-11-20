@@ -22,3 +22,5 @@ in Milan, Italy.
 My research uses observational data and **applied econometric methods** to better understand how **digital media** affect the production and consumption of information, 
 with special attention to **political effects** in developed democracies. 
 
+If you would like to get in contact, please feel free to reach out!
+
