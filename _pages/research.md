@@ -15,7 +15,7 @@ nav: true
 <!---->
 
 <p></p><p></p>
-<b>Disrupting Progress? Disruptive Protests and Support for Environmental Policies</b>
+<b>\#Econ: The Impact of Social Media Usage on Economic Research</b><i> (with <a href="https://carloschwarz.eu/about/" target="_blank">Carlo Schwarz</a>)</i>
 
 <p></p><p></p>
-<b>\#Econ: The Impact of Social Media Usage on Economic Research</b><i> (with <a href="https://carloschwarz.eu/about/" target="_blank">Carlo Schwarz</a>)</i>
+<b>Disrupting Progress? Disruptive Protests and Support for Environmental Policies</b>
