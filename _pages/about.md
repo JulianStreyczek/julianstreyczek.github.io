@@ -15,7 +15,7 @@ selected_papers: false # includes a list of papers marked as "selected={true}"
 social: false  # includes social icons at the bottom of the page
 ---
 
-Hello there! I am a fifth-year PhD student in Economics at 
+Hello there! I'm a PhD Candidate in Economics at 
 <a target="_blank" href="https://www.unibocconi.eu/">Bocconi University</a>
 in Milan, Italy. 
 
