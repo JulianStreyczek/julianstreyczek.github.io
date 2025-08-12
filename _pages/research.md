@@ -6,16 +6,53 @@ description:
 nav: true
 ---
 
-### Work in Progress
+<!--### Work in Progress-->
 
-<p></p>
+<!--<p></p>-->
 <!--<a href="{{'/assets/pdf/Paywalls_Paper_2025-02.pdf' | prepend: site.baseurl | prepend: site.url }}" target="_blank"><b>Political Effects of Newspaper Paywalls</b></a> <sub><sup>(Presented at Meeting of Young Economists 2023 in Turin, Italy)</sup></sub><br/>-->
-<a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5124655" target="_blank"><b>Political Effects of Newspaper Paywalls</b></a><br/> <!--<sub><sup>(Presented at Meeting of Young Economists 2023 in Turin, Italy)</sup></sub>-->
-<small>I examine how the introduction of paywalls on newspaper websites in the early 2010s affected political knowledge and electoral participation in the United States. Exploiting the staggered adoption of paywalls across newspapers and counties, I document a 25--30 percent decline in website visits following the introduction of a paywall. Moreover, I show that in counties where a larger share of online news consumption was affected by paywalls, survey respondents are 2--3 percentage points less likely to correctly answer political knowledge questions. This effect is driven by declines in knowledge about regional politics and most pronounced among individuals with lower income and education. These findings suggest that these groups may respond to paywalls by substituting towards less costly news sources with less intensive coverage of regional politics. Additionally, affected counties exhibit a suggestive 2 percentage point decline in congressional primary election participation. My results underscore the importance of easy access to high-quality news for democratic processes.</small>
+<strong>Political Effects of Newspaper Paywalls</strong> [JMP]<br/>
+&#9679; <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5124655" target="_blank">SSRN Working Paper 5124655</a> (July 2025)<br/>
+<!--&#9679; <b>Presentations (selected):</b> EEA Congress 2025 (Bordeaux), Political Economy Workshop (Harvard), Political Economy Workshop (Bocconi), European Meeting of Young Economists 2023 (Turin) -->
+<details open style="margin-top: -1em;">
+<summary><b>Abstract</b></summary>
+<small>I study how the introduction of paywalls on newspaper websites in the early 2010s affected political knowledge and electoral participation in the United States. 
+        Exploiting the staggered adoption of paywalls across newspapers, I first show that paywalls reduce readership of online news content, decreasing page views by a 25-30 percent on average.
+        Next, I analyze the impact of county-level exposure to paywalls, measured as the share of online news consumption affected by paywalls, on political knowledge and electoral participation.
+        I show that survey respondents in counties most exposed to paywalls become 1.6-2.4 percent less likely to correctly answer factual knowledge questions on party affiliations of political representatives and majorities in legislative bodies. 
+        This effect is driven by declines in knowledge about both national and regional politics, and is most pronounced among lower-income, less-educated individuals, and those least likely to subscribe to paid news. 
+        Additionally, higher paywall exposure reduces electoral participation among these non-subscribers by approximately 2 percent, particularly in federal and state congressional elections. 
+        These findings suggests that paywalls restrict access to politically relevant information, prompting substitution toward free alternatives with less political content. 
+		My results underscore the importance of easy access to high-quality news for democratic processes.</small>
+</details>
 <!---->
 
-<p></p><p></p>
-<b>\#Econ: The Impact of Social Media Usage on Economic Research</b><i> (with <a href="https://carloschwarz.eu/about/" target="_blank">Carlo Schwarz</a>)</i>
+<div style="margin-top: 30px;"></div>
+<strong>\#Science: How Twitter Shapes Economic Research</strong><i> (with <a href="https://carloschwarz.eu/about/" target="_blank">Carlo Schwarz</a>)</i>
+<details open style="margin-top: -1em;">
+<summary><b>Abstract</b></summary>
+<small>We study how Twitter usage affects the production of economics research. 
+		We focus on 17,000 economists, for whom we collect detailed information on publications, citations, co-authors, and research topics from RePEc. 
+		We augment this data by linking economists to their personal Twitter accounts and PhD cohorts based on publicly available curricula vitae. 
+		To estimate causal effects, we develop a novel instrument for Twitter usage that exploits indirect peer effects across PhD cohorts and research fields. 
+		Our results indicate that Twitter usage increases productivity by approximately one additional paper every 2.2 years for the average user. 
+		Although individual papers receive slightly fewer citations, higher overall productivity leads to an additional 8.7 citations per year. 
+		These gains are largest for intensive Twitter users, men, and more experienced economists. 
+		Key mechanisms behind these effects include expanded co-author networks and shifts toward research topics that resonate more on Twitter, such as themes related to Covid-19, cryptocurrency, and Trump. 
+		This shift in topics is associated with higher attention toward economists’ work in mainstream media and the general public. 
+		Together, our findings suggest that Twitter significantly reshapes the direction of economists' work and amplifies its recognition both within and beyond academia.</small>
+</details>
 
-<p></p><p></p>
-<b>Disrupting Progress? Disruptive Protests and Support for Environmental Policies</b>
+
+
+<div style="margin-top: 30px;"></div>
+<strong>Disruptive Activism and Environmental Policy Support</strong><br/>
+&#9679; <a href="{{'/assets/pdf/Protests_Paper_2025_07.pdf' | prepend: site.baseurl | prepend: site.url }}" target="_blank">PDF</a>
+<details style="margin-top: -1em;">
+<summary><b>Abstract</b></summary>
+<small>Social movements may choose disruptive forms of protest to attract controversy, increasing public attention at the cost of negative sentiment toward itself and ideologically similar groups. 
+This paper analyzes the short-term effects of such protests carried out by the <i>Last Generation</i>, a German environmental activist group known for blocking roads and covering public structures in orange paint. 
+Combining detailed data on protests with large-scale survey responses, I exploit the timing and location of protests to identify causal effects on environmental attitudes and support for the Green Party.
+The results indicate no direct impact of the protests themselves. 
+Instead, short-lived increases in Green Party support and environmental concerns emerge immediately before the protests, concentrated among politically informed respondents and accompanied by increased urban-rural polarization. 
+These findings suggest that external news events likely shape both local attitudes and local propensities to protest.</small>
+</details>
