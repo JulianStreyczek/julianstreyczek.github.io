@@ -10,8 +10,9 @@ nav: true
 
 <!--<p></p>-->
 <!--<a href="{{'/assets/pdf/Paywalls_Paper_2025-02.pdf' | prepend: site.baseurl | prepend: site.url }}" target="_blank"><b>Political Effects of Newspaper Paywalls</b></a> <sub><sup>(Presented at Meeting of Young Economists 2023 in Turin, Italy)</sup></sub><br/>-->
-<strong>Political Effects of Newspaper Paywalls</strong> [JMP]<br/>
+<a href="{{'/assets/pdf/Paywalls_Paper_2025_07.pdf' | prepend: site.baseurl | prepend: site.url }}" target="_blank"><strong>Political Effects of Newspaper Paywalls</strong></a> [JMP]<br/>
 &#9679; <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5124655" target="_blank">SSRN Working Paper 5124655</a> (July 2025)<br/>
+<!--&#9679; <a href="{{'/assets/pdf/Paywalls_Paper_2025_07.pdf' | prepend: site.baseurl | prepend: site.url }}" target="_blank">PDF</a>-->
 <!--&#9679; <b>Presentations (selected):</b> EEA Congress 2025 (Bordeaux), Political Economy Workshop (Harvard), Political Economy Workshop (Bocconi), European Meeting of Young Economists 2023 (Turin) -->
 <details open style="margin-top: -1em;">
 <summary><b>Abstract</b></summary>
@@ -45,8 +46,8 @@ nav: true
 
 
 <div style="margin-top: 30px;"></div>
-<strong>Disruptive Activism and Environmental Policy Support</strong><br/>
-&#9679; <a href="{{'/assets/pdf/Protests_Paper_2025_07.pdf' | prepend: site.baseurl | prepend: site.url }}" target="_blank">PDF</a>
+<a href="{{'/assets/pdf/Protests_Paper_2025_07.pdf' | prepend: site.baseurl | prepend: site.url }}" target="_blank"><strong>Disruptive Activism and Environmental Policy Support</strong></a><br/>
+<!--&#9679; <a href="{{'/assets/pdf/Protests_Paper_2025_07.pdf' | prepend: site.baseurl | prepend: site.url }}" target="_blank">PDF</a>-->
 <details style="margin-top: -1em;">
 <summary><b>Abstract</b></summary>
 <small>Social movements may choose disruptive forms of protest to attract controversy, increasing public attention at the cost of negative sentiment toward itself and ideologically similar groups. 
