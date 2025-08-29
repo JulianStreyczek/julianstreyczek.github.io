@@ -8,7 +8,7 @@ layout: default
           
 		  <!-- Profile pic -->
 		  {% if page.profile -%}
-          <div style="margin-top: 0.5rem" class="profile float-{%- if page.profile.align == 'left' -%}left{%- else -%}right{%- endif -%}">
+          <div style="margin-top: 0rem" class="profile float-{%- if page.profile.align == 'left' -%}left{%- else -%}right{%- endif -%}">
             {%- if page.profile.image %}
               {%- assign profile_image_path = page.profile.image | prepend: 'assets/img/' -%}
 
