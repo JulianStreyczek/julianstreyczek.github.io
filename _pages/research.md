@@ -13,7 +13,7 @@ nav: true
 <a href="{{'/assets/pdf/Paywalls_Paper_2025_07.pdf' | prepend: site.baseurl | prepend: site.url }}" target="_blank"><strong>Political Effects of Newspaper Paywalls</strong></a> [JMP]<br/>
 &#9679; <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5124655" target="_blank">SSRN Working Paper 5124655</a> (July 2025)<br/>
 <!--&#9679; <a href="{{'/assets/pdf/Paywalls_Paper_2025_07.pdf' | prepend: site.baseurl | prepend: site.url }}" target="_blank">PDF</a>-->
-<!--&#9679; <b>Presentations (selected):</b> EEA Congress 2025 (Bordeaux), Political Economy Workshop (Harvard), Political Economy Workshop (Bocconi), European Meeting of Young Economists 2023 (Turin) -->
+&#9679; <b>Presentations:</b> NABE TEC 2025 (Seattle), EEA Congress 2025 (Bordeaux), European Meeting of Young Economists 2023 (Turin), Harvard Brown-Bags 2025
 <details open style="margin-top: -1em;">
 <summary><b>Abstract</b></summary>
 <small>I study how the introduction of paywalls on newspaper websites in the early 2010s affected political knowledge and electoral participation in the United States. 
@@ -28,7 +28,8 @@ nav: true
 <!---->
 
 <div style="margin-top: 30px;"></div>
-<strong>\#Science: How Twitter Shapes Economic Research</strong><i> (with <a href="https://carloschwarz.eu/about/" target="_blank">Carlo Schwarz</a>)</i>
+<strong>\#Science: How Twitter Shapes Economic Research</strong><i> (with <a href="https://carloschwarz.eu/about/" target="_blank">Carlo Schwarz</a>)</i><br/>
+&#9679; <b>Presentations:</b> Econometric Society Winter Meeting 2025 (Nicosia), AI + Economics Workshop 2025 (Zurich), DAISI Workshop 2025 (Bocconi)
 <details open style="margin-top: -1em;">
 <summary><b>Abstract</b></summary>
 <small>We study how Twitter usage affects the production of economics research. 
