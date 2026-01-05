@@ -17,9 +17,9 @@ social: false  # includes social icons at the bottom of the page
 
 Hello there! I\'m a PhD Candidate in Economics at 
 <a target="_blank" href="https://www.unibocconi.eu/">Bocconi University</a>
-in Milan, Italy. I spent January through May 2025 as a Visiting Fellow at <a target="_blank" href="https://www.gov.harvard.edu/">Harvard University</a>.
+in Milan, Italy, supported by the <a target="_blank" href="https://www.studienstiftung.de/en">German Academic Scholarship Foundation (Studienstiftung)</a>, and I spent January through May 2025 as a Visiting Fellow at <a target="_blank" href="https://www.gov.harvard.edu/">Harvard University</a>.
 
-My research uses observational data, **applied econometric methods**, and machine learning to better understand how **digital media** affect individual attitudes and behavior.
+My research uses **observational data**, **causal inference**, and **machine learning** methods to better understand how digital technologies affect individual attitudes and behavior.
 
 If you would like to get in contact, feel free to reach out!
 
