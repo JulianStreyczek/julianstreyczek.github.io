@@ -28,8 +28,8 @@ nav: true
 <!---->
 
 <div style="margin-top: 30px;"></div>
-<strong>\#Science: How Twitter Shapes Economic Research</strong><i> (with <a href="https://carloschwarz.eu/about/" target="_blank">Carlo Schwarz</a>)</i><br/>
-&#9679; Funded by European Research Council (ERC) Starting Grant (Project 101164784 — CHAIN — ERC-2024-STG)<br/>
+<a href="{{'/assets/pdf/EconTwitter_Paper_2025_08.pdf' | prepend: site.baseurl | prepend: site.url }}" target="_blank"><strong>\#Science: How Twitter Shapes Economic Research</strong></a><i> (with <a href="https://carloschwarz.eu/about/" target="_blank">Carlo Schwarz</a>)</i><br/>
+&#9679; Funded by <a href="https://erc.europa.eu/homepage" target="_blank">European Research Council (ERC)Starting Grant</a> (Project 101164784 — CHAIN — ERC-2024-STG)<br/>
 &#9679; <b>Presentations:</b> Econometric Society Winter Meeting 2025 (Nicosia), AI + Economics Workshop 2025 (Zurich), DAISI Workshop 2025 (Bocconi)
 <details open style="margin-top: -1em;">
 <summary><b>Abstract</b></summary>
