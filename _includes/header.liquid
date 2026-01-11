@@ -55,8 +55,8 @@
               {% endif %}
             </a>
           </li>
-
-          <!-- Other pages -->
+          
+          <!-- Other pages
           {% assign sorted_pages = site.pages | sort: 'nav_order' %}
           {% for p in sorted_pages %}
             {% if p.nav and p.autogen == null %}
@@ -117,7 +117,9 @@
               {% endif %}
             {% endif %}
           {% endfor %}
+          -->
 
+          
           <!-- Research -->
           <li id="show-research" class="nav-item {% if page.url contains 'research' %}active{% endif %}">
             <a class="nav-link" href="{{ '/research/' | relative_url }}">
@@ -134,7 +136,7 @@
 
           <!-- CV -->
           <li id="show-cv" class="nav-item">
-            <a class="nav-link" target="_blank" href="{{ '/assets/pdf/cv_julian_streyczek.pdf' | prepend: site.baseurl | prepend: site.url }}">
+            <a class="nav-link" target="_blank" href="{{ '/assets/pdf/cv_julian_streyczek.pdf' | relative_url }}">
               CV
             </a>
           </li>
