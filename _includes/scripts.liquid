@@ -248,6 +248,15 @@
   <script async defer src="https://openpanel.dev/op1.js"></script>
 {% endif %}
 
+<!-- Insights Analytics - privacy-friendly (cookie-less) analytics -->
+<script src="https://getinsights.io/js/insights.js"></script>
+<script>
+  insights.init('tAO8SOArjDvm5XhY');
+  insights.trackPages();
+  insights.track({id: "show-research", parameters: {showresearch: "show-research"}});
+  insights.track({id: "show-cv", parameters: {showcv: "show-cv"}});
+</script>
+
 {% if site.enable_progressbar %}
   <!-- Scrolling Progress Bar -->
   <script defer src="{{ '/assets/js/progress-bar.js' | relative_url | bust_file_cache }}" type="text/javascript"></script>

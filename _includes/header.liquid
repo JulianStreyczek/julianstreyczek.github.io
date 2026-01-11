@@ -117,6 +117,28 @@
               {% endif %}
             {% endif %}
           {% endfor %}
+
+          <!-- Research -->
+          <li id="show-research" class="nav-item {% if page.url contains 'research' %}active{% endif %}">
+            <a class="nav-link" href="{{ '/research/' | relative_url }}">
+              Research
+            </a>
+          </li>
+
+          <!-- Other projects -->
+          <li id="show-projects" class="nav-item {% if page.url contains 'projects' %}active{% endif %}">
+            <a class="nav-link" href="{{ '/projects/' | relative_url }}">
+              Projects
+            </a>
+          </li>
+
+          <!-- CV -->
+          <li id="show-cv" class="nav-item">
+            <a class="nav-link" target="_blank" href="{{ '/assets/pdf/cv_julian_streyczek.pdf' | prepend: site.baseurl | prepend: site.url }}">
+              CV
+            </a>
+          </li>
+
           {% if site.search_enabled %}
             <!-- Search -->
             <li class="nav-item">
