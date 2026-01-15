@@ -16,6 +16,13 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/research/";
           },
+        },{id: "nav-blog",
+          title: "blog",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/blog/";
+          },
         },{id: "nav-other-projects",
           title: "Other projects",
           description: "",
@@ -23,7 +30,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/projects/";
           },
-        },{id: "news-started-my-phd-at-bocconi",
+        },{id: "post-the-economist-39-s-guide-to-causal-forests",
+        
+          title: "The Economist&#39;s Guide to Causal Forests",
+        
+        description: "A guide to understanding and implementing causal forests for heterogeneous treatment effect estimation, bridging the gap between machine learning and econometrics.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2022/causal-forests-guide/";
+          
+        },
+      },{id: "news-started-my-phd-at-bocconi",
           title: 'Started my PhD at Bocconi',
           description: "",
           section: "News",},{id: "news-i-made-a-little-julia-replication-of-this-paper-that-compares-the-effectiveness-of-government-policies-in-a-pandemic-in-a-theoretical-model-if-you-like-have-a-look-at-the-github-repo-and-the-documentation",
