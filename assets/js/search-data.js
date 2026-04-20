@@ -69,8 +69,8 @@ ninja.data = [{
           description: "Simulations of social and economic impacts of pandemic lockdown policies. Julia Replication of Chari, Kirpalani, and Phelan (2021)",
           section: "Projects",handler: () => {
               window.location.href = "/projects/02_hammerscalpel/";
-            },},{id: "projects-regression-discontinuity-with-many-covariates",
-          title: 'Regression Discontinuity with Many Covariates',
+            },},{id: "projects-regression-discontinuity-with-lasso-selected-covariates",
+          title: 'Regression Discontinuity with Lasso-selected Covariates',
           description: "I developed and tested a method to select covariates for RD designs (master thesis).",
           section: "Projects",handler: () => {
               window.location.href = "/projects/03_rdlasso/";
