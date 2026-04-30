@@ -6,5 +6,3 @@ img: assets/img/rdlasso_header.PNG
 redirect: ../assets/pdf/rdlasso.pdf
 importance: 1
 ---
-
-

@@ -5,4 +5,3 @@ inline: true
 ---
 
 I'm visiting <a target="_blank" href="https://www.gov.harvard.edu/">Harvard's Department of Government</a> as a Fellow from January to May 2025.
-

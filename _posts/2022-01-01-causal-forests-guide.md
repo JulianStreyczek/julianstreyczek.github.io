@@ -38,7 +38,6 @@ _styles: >
     margin-top: 0.3em !important;
     margin-bottom: 1em !important;
   }
-
 ---
 
 ## Introduction
@@ -55,7 +54,7 @@ With each year, more and more information about the world is being generated. In
 
 It is evident that as the nature of data evolve, the empirical science analyzing these data must evolve as well. The field of statistics has been embracing this change for some time now, a process that was famously promoted by Breiman (2001)<d-cite key="breiman2001statistical"></d-cite>. In this pioneering article, Breiman advertises what are now commonly known as machine learning methods: flexible statistical tools that analyze data while imposing little structure on them. The field of economics, however, has been slow to adapt to the new status quo, and despite their tremendous success in many applications, major advances in machine learning have found their way into standard economics and econometrics only very recently.
 
-One issue that lies at the heart of econometrics is estimation of causal effects. Formally, given data on some outcome, treatment, and covariates, $$ \{(Y_i, W_i, X_i)\}_{i=1,...,N} $$, one is interested in estimating the average treatment effect $$ \tau = \mathbb{E}[Y_i(1)-Y_i(0)] $$, where $$ Y_i(w) $$ denotes the potential outcome that unit $$ i $$ would have if it would be assigned treatment $$ w $$. In practice, treatment effects can differ considerably between units, so that the aim is often recovery of _heterogeneous_ treatment effects given covariates, $$ \tau(x)=\mathbb{E}[Y_i(1)-Y_i(0)\vert X_i=x] $$. For example, one might want to estimate the individual-specific effect of a costly policy, to apply it only to individuals who derive sufficient benefit from it.
+One issue that lies at the heart of econometrics is estimation of causal effects. Formally, given data on some outcome, treatment, and covariates, $$ \{(Y*i, W_i, X_i)\}*{i=1,...,N} $$, one is interested in estimating the average treatment effect $$ \tau = \mathbb{E}[Y_i(1)-Y_i(0)] $$, where $$ Y*i(w) $$ denotes the potential outcome that unit $$ i $$ would have if it would be assigned treatment $$ w $$. In practice, treatment effects can differ considerably between units, so that the aim is often recovery of \_heterogeneous* treatment effects given covariates, $$ \tau(x)=\mathbb{E}[Y_i(1)-Y_i(0)\vert X_i=x] $$. For example, one might want to estimate the individual-specific effect of a costly policy, to apply it only to individuals who derive sufficient benefit from it.
 
 There are two problems that may render estimation via least squares infeasible. First, in high-dimensional data the number of covariates can easily exceed the number of observations. Second, the heterogeneous treatment effect $$ \tau(x) $$ may exhibit severe non-monotonicity and involve complex interactions between covariates. Then, even if the number of covariates is only moderately high, estimating the shape of $$ \tau(x) $$ may require more parameters in the least squares regression than can be estimated precisely.
 
@@ -67,21 +66,21 @@ _Causal forests_ are a groundbreaking method that allows inferring heterogeneous
 
 This article proceeds as follows. The next section summarizes the core concepts behind regression trees and random forests. The third section explains the conceptual steps to adapt random forests for the estimation of causal effects, and introduces the "state of the art" for estimating causal forests. The final section showcases an application, and discusses limitations and alternatives.
 
-
 ---
 
 ## A Quick Summary of Random Forests
 
-A classic version of a tree is the _classification and regression tree_ (CART) as proposed by Breiman et al. (1984)<d-cite key="breiman1984cart"></d-cite>. Given data on some outcome and associated covariates $$ \{(Y_i, X_i)\}_{i=1,...,N}\in \mathbb{R}\times\mathbb{R}^K $$ for possibly large $$ K\in\mathbb{N} $$, a regression tree approximates the relationship between $$ Y_i $$ and $$ X_i $$ by a step function. It does so by partitioning the covariate space into a set of rectangles $$ \{R_1,...,R_M\} $$, where the prediction of $$ Y_m $$ for rectangle $$ m $$ is the average of all observations falling into the rectangle, $$ \hat Y_m = \text{avg}(\{X_i: i\in R_m\}) $$. The case of two covariates is illustrated in the figure below.
+A classic version of a tree is the _classification and regression tree_ (CART) as proposed by Breiman et al. (1984)<d-cite key="breiman1984cart"></d-cite>. Given data on some outcome and associated covariates $$ \{(Y*i, X_i)\}*{i=1,...,N}\in \mathbb{R}\times\mathbb{R}^K $$ for possibly large $$ K\in\mathbb{N} $$, a regression tree approximates the relationship between $$ Y_i $$ and $$ X_i $$ by a step function. It does so by partitioning the covariate space into a set of rectangles $$ \{R_1,...,R_M\} $$, where the prediction of $$ Y_m $$ for rectangle $$ m $$ is the average of all observations falling into the rectangle, $$ \hat Y_m = \text{avg}(\{X_i: i\in R_m\}) $$. The case of two covariates is illustrated in the figure below.
 
 {% include figure.liquid path="assets/img/2022-01-01-causal-forests-guide/CARTvisualization.png" class="img-fluid rounded z-depth-1" %}
+
 <div class="caption">
     Exemplary visualization of a regression tree with K=2 covariates. Source: James et al. (2013)<d-cite key="james2013introduction"></d-cite>.
 </div>
 
-The partition is generated as follows: The initial _node_ is simply the complete covariate space. Then, this node is repeatedly split in two to minimize prediction mean squared error (MSE) _greedily_; that is, each split looks for the maximum _immediate_ improvement in MSE. A split must occur in one dimension only: Given some node $$ R $$, a split is characterized by a covariate $$ x_k $$ and a corresponding value $$ c $$. Then, the _child node_ $$ R_1 $$ contains the subset of $$ R $$ with $$ x_k\leq c $$, and the child node $$ R_2 $$ contains its complement; the subset of $$ R $$ with $$ x_k>c $$. In this fashion, nodes are repeatedly split until a certain stopping criterion is reached, for example until all terminal nodes ("_leafs_") contain a pre-specified minimum number of observations.
+The partition is generated as follows: The initial _node_ is simply the complete covariate space. Then, this node is repeatedly split in two to minimize prediction mean squared error (MSE) _greedily_; that is, each split looks for the maximum _immediate_ improvement in MSE. A split must occur in one dimension only: Given some node $$ R $$, a split is characterized by a covariate $$ x*k $$ and a corresponding value $$ c $$. Then, the \_child node* $$ R*1 $$ contains the subset of $$ R $$ with $$ x_k\leq c $$, and the child node $$ R_2 $$ contains its complement; the subset of $$ R $$ with $$ x_k>c $$. In this fashion, nodes are repeatedly split until a certain stopping criterion is reached, for example until all terminal nodes ("\_leafs*") contain a pre-specified minimum number of observations.
 
-The procedure is prone to overfitting: With each new split, the tree predicts better the training data, which reduces bias but increases variance of the predictions. To balance this inherent trade-off, one needs to select one tree from the sequence of trees obtained from adding splits. A method for doing so is _cost complexity pruning_, which introduces a penalty parameter $$ \alpha $$ on the number of nodes $$ T $$ that combined with the MSE generates a score $$ C_\alpha $$ for each tree:
+The procedure is prone to overfitting: With each new split, the tree predicts better the training data, which reduces bias but increases variance of the predictions. To balance this inherent trade-off, one needs to select one tree from the sequence of trees obtained from adding splits. A method for doing so is _cost complexity pruning_, which introduces a penalty parameter $$ \alpha $$ on the number of nodes $$ T $$ that combined with the MSE generates a score $$ C\_\alpha $$ for each tree:
 
 $$
 C_{\alpha} = MSE + \alpha |T| \ .
@@ -95,7 +94,7 @@ The major advantages of CARTs are their interpretability (the partition makes it
 
 ## From Causal Trees to Causal Forests
 
-We now turn back to our initial problem of estimating heterogeneous treatment effects. Suppose we are given a sample of outcome, treatment, and covariates, $$ \{(Y_i, W_i, X_i)\}_{i=1,...,N} $$, and assume that treatment is randomized conditional on covariates
+We now turn back to our initial problem of estimating heterogeneous treatment effects. Suppose we are given a sample of outcome, treatment, and covariates, $$ \{(Y*i, W_i, X_i)\}*{i=1,...,N} $$, and assume that treatment is randomized conditional on covariates
 
 $$
 Y_i(1), Y_i(0) \perp W_i\ | X_i \ ,
@@ -107,13 +106,13 @@ $$
 \tau(x)=\mathbb{E}[\tau_i(x)|X_i=x] \qquad\text{where}\qquad \tau_i = Y_i(1)-Y_i(0) .
 $$
 
-There are two main reasons why a random forest consisting of the usual CARTs is not suited for this estimation problem. First, CARTs split and prune to maximize prediction MSE $$ \sum_{i=1}^N (Y_i-\hat\mu(X_i))^2/N $$, so that the most natural adaptation to our problem would entail targeting estimation MSE $$ \sum_{i=1}^N (\tau_i - \hat\tau_i(X_i))^2/N $$. However, $$ \tau_i $$ is never actually observed, rendering this option infeasible. The second reason is that naive splitting will bias estimates, which is a more subtle point. To see why, consider a simple example where the covariate space contains only two elements, $$ \mathbb{X}=\{L,R\} $$, and we wish to estimate the difference in outcomes $$ \Delta=\mathbb{E}[Y_L-Y_R] $$. If we try to estimate $$ \Delta $$ via a tree, we have two choices: Either split the initial node, or not, which results in estimates $$ \hat\Delta=0 $$ or $$ \hat\Delta=\overline{Y}_L-\overline{Y}_R $$, where $$ \overline{Y}_\ell $$ defines the average outcome in leaf $$ \ell\in\{L,R\} $$. The most natural splitting rule places a split if and only if $$ \overline{Y}_L-\overline{Y}_R>c $$ for some $$ c\in\mathbb{R} $$. However, this procedure introduces selection bias: For example, if due to sampling variability we observe $$ \overline{Y}_L-\overline{Y}_R>c $$, our estimate is biased upwards: $$ \hat\Delta=\mathbb{E}[Y_L-Y_R\vert\overline{Y}_L-\overline{Y}_R>c]>\Delta $$.
+There are two main reasons why a random forest consisting of the usual CARTs is not suited for this estimation problem. First, CARTs split and prune to maximize prediction MSE $$ \sum*{i=1}^N (Y_i-\hat\mu(X_i))^2/N $$, so that the most natural adaptation to our problem would entail targeting estimation MSE $$ \sum*{i=1}^N (\tau*i - \hat\tau_i(X_i))^2/N $$. However, $$ \tau_i $$ is never actually observed, rendering this option infeasible. The second reason is that naive splitting will bias estimates, which is a more subtle point. To see why, consider a simple example where the covariate space contains only two elements, $$ \mathbb{X}=\{L,R\} $$, and we wish to estimate the difference in outcomes $$ \Delta=\mathbb{E}[Y_L-Y_R] $$. If we try to estimate $$ \Delta $$ via a tree, we have two choices: Either split the initial node, or not, which results in estimates $$ \hat\Delta=0 $$ or $$ \hat\Delta=\overline{Y}\_L-\overline{Y}\_R $$, where $$ \overline{Y}*\ell $$ defines the average outcome in leaf $$ \ell\in\{L,R\} $$. The most natural splitting rule places a split if and only if $$ \overline{Y}\_L-\overline{Y}\_R>c $$ for some $$ c\in\mathbb{R} $$. However, this procedure introduces selection bias: For example, if due to sampling variability we observe $$ \overline{Y}\_L-\overline{Y}\_R>c $$, our estimate is biased upwards: $$ \hat\Delta=\mathbb{E}[Y_L-Y_R\vert\overline{Y}_L-\overline{Y}_R>c]>\Delta $$.
 
 ### Causal Trees
 
 Athey and Imbens (2016)<d-cite key="athey2016recursive"></d-cite> modify the CART procedure to generate what they call _causal trees_. These trees differ from CARTs in two ways: First, causal trees use different sets of observations for building the tree and estimating treatment effects - which the authors call an _honest_ approach to estimation - instead of conducting both steps on the same data. Second, causal trees use an adapted rule for splitting and pruning that targets treatment effect heterogeneity instead of prediction MSE.
 
-**Honest approach.** Honest estimation solves the problem of selection. Employing the simplified example above, even if due to sampling variability we happen to observe $$ \overline{Y}_L-\overline{Y}_R>c $$ and place a split, the final estimate $$ \hat\Delta $$ will be computed with an independent sample, and thus be unbiased. However, it should be noted that this procedure entails a trade-off: By splitting observations into a _training_ sample for partitioning and an _estimation_ sample for calculating effects, both steps will be conducted using less observations. Therefore, the honest approach makes a sacrifice in variance for improvements in bias.
+**Honest approach.** Honest estimation solves the problem of selection. Employing the simplified example above, even if due to sampling variability we happen to observe $$ \overline{Y}_L-\overline{Y}\_R>c $$ and place a split, the final estimate $$ \hat\Delta $$ will be computed with an independent sample, and thus be unbiased. However, it should be noted that this procedure entails a trade-off: By splitting observations into a \_training_ sample for partitioning and an _estimation_ sample for calculating effects, both steps will be conducted using less observations. Therefore, the honest approach makes a sacrifice in variance for improvements in bias.
 
 Moreover, note that honest estimation modifies the rules for splitting and cross-validation. To illustrate this fact, consider the splitting target of a CART, which for a given training sample $$ S^{tr} $$ and partition $$ \Pi $$ can be written<d-footnote>In the following, division by the number of observations is ignored for better readability.</d-footnote>
 
@@ -133,17 +132,17 @@ $$
 EMSE_\mu(S^{tr}, S^{est}, \Pi) =  \mathbb{E}_{S^{est}} [MSE_\mu(S^{tr}, S^{est}, \Pi)] \ .
 $$
 
-Splits are placed to improve an approximation $$ \widehat{EMSE}_\mu(\cdot) $$, and similarly for cross-validation.
+Splits are placed to improve an approximation $$ \widehat{EMSE}\_\mu(\cdot) $$, and similarly for cross-validation.
 
-**Targeting treatment effect heterogeneity.** Recall that splitting and cross-validation also need to be adapted for estimating (unobserved) treatment effects as opposed to (observed) goodness of fit. The key insight here is that for minimizing the MSE of the treatment effect $$ MSE_\tau = \sum_i (\tau_i - \hat\tau_i(X_i))^2 $$, it is sufficient to maximize the variance of of $$ \hat\tau(X_i) $$ in each child node. For an illustration, consider again the conventional (non-honest) CART target
+**Targeting treatment effect heterogeneity.** Recall that splitting and cross-validation also need to be adapted for estimating (unobserved) treatment effects as opposed to (observed) goodness of fit. The key insight here is that for minimizing the MSE of the treatment effect $$ MSE\_\tau = \sum_i (\tau_i - \hat\tau_i(X_i))^2 $$, it is sufficient to maximize the variance of of $$ \hat\tau(X_i) $$ in each child node. For an illustration, consider again the conventional (non-honest) CART target
 
 $$
 MSE_\mu = \sum_{i\in\mathcal{I}} (Y_i-\hat\mu(X_i))^2 = \sum_{i\in\mathcal{I}} Y_i^2 - \sum_{i\in\mathcal{I}} \hat\mu(X_i)^2 \ .
 $$
 
-Since $$ \sum_{i\in\mathcal{I}} Y_i^2 $$ is unaffected by splitting decisions, $$ MSE_\mu $$ can be minimized by maximizing $$ \sum_{i\in\mathcal{I}} \hat\mu(X_i)^2 $$, which is equivalent to maximizing $$ Var(\hat\mu(X_i))=\sum_{i\in\mathcal{I}} \hat\mu(X_i)^2 - \big(\sum_{i\in\mathcal{I}} \hat\mu(X_i)\big)^2 $$ since $$ \sum_{i\in\mathcal{I}} \hat\mu(X_i) = \sum_{i\in\mathcal{I}} Y_i $$ for all trees. In other words, we can minimize the MSE of $$ \hat\mu(\cdot) $$ by picking splits that maximize the variance of $$ \hat\mu(\cdot) $$. Analogously, causal trees maximize a variance estimate of $$ \hat\tau(X_i) $$ at each split. Intuitively, targeting high treatment effect variance will lead to large heterogeneity in treatment effects across nodes, which is exactly the goal.
+Since $$ \sum*{i\in\mathcal{I}} Y_i^2 $$ is unaffected by splitting decisions, $$ MSE*\mu $$ can be minimized by maximizing $$ \sum*{i\in\mathcal{I}} \hat\mu(X_i)^2 $$, which is equivalent to maximizing $$ Var(\hat\mu(X_i))=\sum*{i\in\mathcal{I}} \hat\mu(X*i)^2 - \big(\sum*{i\in\mathcal{I}} \hat\mu(X*i)\big)^2 $$ since $$ \sum*{i\in\mathcal{I}} \hat\mu(X*i) = \sum*{i\in\mathcal{I}} Y_i $$ for all trees. In other words, we can minimize the MSE of $$ \hat\mu(\cdot) $$ by picking splits that maximize the variance of $$ \hat\mu(\cdot) $$. Analogously, causal trees maximize a variance estimate of $$ \hat\tau(X_i) $$ at each split. Intuitively, targeting high treatment effect variance will lead to large heterogeneity in treatment effects across nodes, which is exactly the goal.
 
-As before, this splitting rule needs to be adapted to the honest approach, which entails estimating a target $$ \widehat{EMSE}_\tau(\cdot) $$, and similarly for cross-validation.
+As before, this splitting rule needs to be adapted to the honest approach, which entails estimating a target $$ \widehat{EMSE}\_\tau(\cdot) $$, and similarly for cross-validation.
 
 ### Causal Forests
 
@@ -177,13 +176,14 @@ where $$ \alpha_i(x) $$ are weights indicating the "closeness" of observation $$
 
 To clarify the above point: In a classical random forest, each tree computes its own treatment effect estimate for the test point $$ x $$, and the final estimate is the average of these individual estimates. In a generalized random forest, one does not use the estimates of the trees, but only the partitions they generate. Intuitively, if an observation is in the same leaf as $$ x $$ in many trees of the forest, it can be interpreted as being very similar, and therefore important for estimating any quantity of interest at $$ x $$. Moreover, being in the same leaf is more important if the considered leaf is small, since that observation "survived" many splits together with $$ x $$. Conversely, an observation that is not "close" to $$ x $$ in many trees is likely less important for estimating $$ \theta(x) $$.
 
-The idea of inferring local weighting from a random forest is illustrated in the figure below. Formally, when growing a total of $$ B $$ trees, we can define as $$ \alpha_{bi} $$ the importance of observation $$ i $$ in tree $$ b $$, and as $$ \alpha_i(x) $$ the overall weight of $$ i $$ for $$ x $$:
+The idea of inferring local weighting from a random forest is illustrated in the figure below. Formally, when growing a total of $$ B $$ trees, we can define as $$ \alpha\_{bi} $$ the importance of observation $$ i $$ in tree $$ b $$, and as $$ \alpha_i(x) $$ the overall weight of $$ i $$ for $$ x $$:
 
 $$
 \alpha_{bi}(x) = \frac{\mathbf{1}(\text{$i$ is in same leaf as $x$})}{\text{no. observations in same leaf as $x$}} \qquad\text{and}\qquad \alpha_i = \frac{1}{B} \sum_{b=1}^B \alpha_{bi}(x) \ .
 $$
 
 {% include figure.liquid path="assets/img/2022-01-01-causal-forests-guide/GRFweighting.png" class="img-fluid rounded z-depth-1" %}
+
 <div class="caption">
     Exemplary visualization of the local weights inferred by a random forest. The test point is marked by the blue "x", and observations are represented by black dots. Source: Athey, Tibshirani, and Wager (2019)<d-cite key="athey2019generalized"></d-cite>.
 </div>
@@ -276,6 +276,7 @@ x <- as.matrix(x_df)
 ```
 
 The data includes:
+
 - **Outcome** (`y`): Net total financial assets
 - **Treatment** (`d`): 401(k) eligibility indicator
 - **Covariates** (`x`): Age, income, education, family size, marital status, two-earner status, defined benefit pension, IRA participation, and home ownership
@@ -343,6 +344,7 @@ abline(h=0, lty=3)
 The left panel of the figure below reports the distribution of CATE estimates across all observations, which are as expected mostly positive, but exhibit large variation. The right panel shows how the CATE estimates and their 95% confidence intervals differ with age for a hypothetical average individual. Unsurprisingly, the estimated effect of 401(k) eligibility is larger for older individuals, even after conditioning on income. This result underlines the importance of convincing also young individuals that saving for retirement is sensible.
 
 {% include figure.liquid path="assets/img/2022-01-01-causal-forests-guide/CATEmerged.png" class="img-fluid rounded z-depth-1" %}
+
 <div class="caption">
     <strong>Left:</strong> Distribution of estimated conditional average treatment effects among all observations.<br>
     <strong>Right:</strong> Estimated conditional average treatment effect given age, with 95% confidence intervals.

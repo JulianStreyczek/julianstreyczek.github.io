@@ -6,5 +6,3 @@ img: assets/img/causalforests_header.PNG
 redirect: https://julianstreyczek.github.io/blog/2022/causal-forests-guide
 importance: 1
 ---
-
-

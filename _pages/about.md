@@ -23,10 +23,10 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-Hello there! I\'m a PhD Candidate in Economics at 
+Hello there! I\'m a PhD Candidate in Economics at
 <a target="_blank" href="https://www.unibocconi.eu/">Bocconi University</a>
-in Milan, Italy. 
-I'm supported by the <a target="_blank" href="https://www.studienstiftung.de/en">German Academic Scholarship Foundation (Studienstiftung)</a>, 
+in Milan, Italy.
+I'm supported by the <a target="_blank" href="https://www.studienstiftung.de/en">German Academic Scholarship Foundation (Studienstiftung)</a>,
 and I spent January through May 2025 as a Visiting Fellow at <a target="_blank" href="https://www.gov.harvard.edu/">Harvard University</a>.
 
 My research uses **observational data**, **causal inference**, and **machine learning** methods to better understand how digital technologies affect individual attitudes and behavior.

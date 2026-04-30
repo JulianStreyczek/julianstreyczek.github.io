@@ -34,7 +34,7 @@ table {
     font-weight: bold;
   }
   th {
-	width: 7rem;
+    width: 7rem;
   }
 }
 
@@ -222,8 +222,8 @@ ul.task-list input[type="checkbox"] {
   margin-right: 1rem;
 }
 
-.desc{
-	font-size: 0.9rem;
+.desc {
+  font-size: 0.9rem;
 }
 
 @media (min-width: 576px) {
@@ -514,7 +514,6 @@ footer.fixed-bottom {
   }
 }
 
-
 footer.sticky-bottom {
   background-color: var(--global-footer-bg-color);
   font-size: 0.6rem;
@@ -534,8 +533,6 @@ footer.sticky-bottom {
     }
   }
 }
-
-
 
 // CV
 

@@ -5,7 +5,5 @@ description: Simulations of social and economic impacts of pandemic lockdown pol
 img: assets/img/hammerscalpel_header.png
 redirect: https://github.com/JulianStreyczek/HammerScalpel.jl
 importance: 1
-github: true
+github: https://github.com/JulianStreyczek/HammerScalpel.jl
 ---
-
-
