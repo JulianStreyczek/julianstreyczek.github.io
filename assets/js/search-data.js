@@ -74,6 +74,16 @@ ninja.data = [{
           description: "I developed and tested a method to select covariates for RD designs (master thesis).",
           section: "Projects",handler: () => {
               window.location.href = "/projects/03_rdlasso/";
+            },},{id: "projects-machine-learning-in-economic-research",
+          title: 'Machine Learning in Economic Research',
+          description: "Slides from an undergraduate mini-course on how machine learning and rich data can answer real-world policy questions.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/04_ml-lectures/";
+            },},{id: "projects-ballotpedia-state-legislature-scraper",
+          title: 'Ballotpedia State Legislature Scraper',
+          description: "R scraper for historical party-composition data in U.S. state legislative chambers from Ballotpedia.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/05_ballotpedia-scraper/";
             },},{
         id: 'social-cv',
         title: 'CV',
