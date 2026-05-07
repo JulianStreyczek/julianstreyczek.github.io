@@ -12,3 +12,8 @@ node_modules/
 vendor
 .idea
 .venv
+docs/
+.codex/
+.claude/
+AGENTS.md
+CLAUDE.md
