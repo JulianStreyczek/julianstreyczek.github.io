@@ -30,7 +30,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/projects/";
           },
-        },{id: "post-the-economist-39-s-guide-to-causal-forests",
+        },{id: "post-data-driven-incentive-design",
+        
+          title: "Data-Driven Incentive Design",
+        
+        description: "Full notebook for a public-data case study on driver supply elasticity and tiered incentive optimization.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/data-driven-incentive-design/";
+          
+        },
+      },{id: "post-the-economist-39-s-guide-to-causal-forests",
         
           title: "The Economist&#39;s Guide to Causal Forests",
         
@@ -59,7 +70,12 @@ ninja.data = [{
           section: "News",},{id: "news-this-fall-i-ll-join-nabe-tec25-in-seattle-the-ai-economics-workshop-at-eth-zurich-and-the-econometric-society-european-winter-meeting-in-nicosia",
           title: 'This fall, I’ll join NABE TEC25 in Seattle, the AI+Economics Workshop at ETH...',
           description: "",
-          section: "News",},{id: "projects-the-economist-39-s-guide-to-causal-forests",
+          section: "News",},{id: "projects-data-driven-incentive-design",
+          title: 'Data-Driven Incentive Design',
+          description: "Public-data case study combining causal supply elasticity estimation with tiered incentive optimization.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/00_data-driven-incentive-design/";
+            },},{id: "projects-the-economist-39-s-guide-to-causal-forests",
           title: 'The Economist&amp;#39;s Guide to Causal Forests',
           description: "Introduction to the econometric foundations of Causal Forests",
           section: "Projects",handler: () => {
